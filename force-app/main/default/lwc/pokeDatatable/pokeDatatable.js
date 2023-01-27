@@ -6,13 +6,13 @@ import {NavigationMixin} from 'lightning/navigation';
 
 
 const columns = [
-    { label: 'Nombre de Pokemon',fieldName: 'Name', type: 'button', initialWidth: 180, typeAttributes: {
+    { label: 'Nombre de Pokemon',fieldName: 'Name', type: 'button', initialWidth: 220, typeAttributes: {
         label: { fieldName: 'Name'}, name: 'redirectPoke',variant :'base'
     }},
     { label: 'ID', fieldName: 'ExtId__c',initialWidth: 60},
     { label: 'Tipos', fieldName: 'Tipos__c', initialWidth: 120, type: 'text'},
     { label: 'Generacion', fieldName: 'Generacion__c', initialWidth: 100},
-    { label: 'Habilidad',fieldName: 'abilityName', type: 'button', initialWidth: 120, typeAttributes: {
+    { label: 'Habilidad',fieldName: 'abilityName', type: 'button', initialWidth: 220, typeAttributes: {
         label: {fieldName: 'abilityName'}, name: 'redirectAbility',variant :'base'  
     }},
     { label: 'Altura', fieldName: 'Altura__c', initialWidth: 100},
@@ -21,7 +21,7 @@ const columns = [
     { label: 'Ataque', fieldName: 'Ataque__c', initialWidth: 100},
     { label: 'Defensa', fieldName: 'Defensa__c', initialWidth: 100},
     { label: 'Velocidad', fieldName: 'Velocidad__c', initialWidth: 100},
-    { label: 'Imagen', fieldName: 'Imagen__c', type:'image'},
+    { label: 'Imagen', fieldName: 'Imagen__c', type:'image', initialWidth: 180},
     
 ];
 
