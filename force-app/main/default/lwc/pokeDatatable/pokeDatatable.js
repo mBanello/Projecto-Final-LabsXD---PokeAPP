@@ -227,12 +227,12 @@ primerPagina() {
 }
 
   paginaSiguiente() {
-    this.nrDePagina = Math.min(Math.floor((this.pokemonsShowingInDatatable.length-9)/10), this.nrDePagina + 1)
+    this.nrDePagina = Math.min(Math.floor((this.pokemonsShowingInDatatable.length)/10), this.nrDePagina + 1)
     this.actualizarPagina()
 }
 
 ultimaPagina() {
-    this.nrDePagina = Math.ceil((this.pokemonsShowingInDatatable.length-9)/10)
+    this.nrDePagina = Math.floor((this.pokemonsShowingInDatatable.length)/10)
     this.actualizarPagina()
 }
 }
