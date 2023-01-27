@@ -1,0 +1,53 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="Pokemons" icon-name="custom:custom63">
+        <div class = "slds-var-m-around_x-small" >
+            <template if:true={datosDePagina}>
+                <lightning-layout multiple-rows>
+                    <lightning-layout-item size="4">
+                        <c-multi-poke-types onchange={handleMultiBoxSimultaneously}></c-multi-poke-types>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="4" class="slds-m-top_x-large">
+                        <div class="slds-m-top_xx-large">
+                            <lightning-input  type="search"  label = "Filtro de Pokemon por Nombre" onchange={handleInputSimultaneously} placeholder="Ej: Bulbasaur"></lightning-input>
+                        </div>
+                        <div class="slds-m-top_xx-large">    
+                            <c-poke-combobox-gen onchange={handleGen}></c-poke-combobox-gen>
+                        </div>
+                        </lightning-layout-item>
+                    <lightning-layout-item>
+                        <div class="slds-m-top_x-large  slds-m-left_xx-large ">
+                        <a href="https://ibb.co/3fdmqn5"><img src="https://i.ibb.co/dbM4qRs/Ash-campeon.jpg" alt="Ash-campeon" style ="border:5px solid #555" width="400" 
+                            height="400" class="slds-m-top_x-large"></a>
+                        </div>
+                    </lightning-layout-item>
+                <div class="slds-m-around_small">
+                    <lightning-button label="Inicio" onclick={primerPagina} variant='brand'></lightning-button>
+                </div>
+                <div class="slds-m-around_small">
+                    <lightning-button label="Página Anterior" onclick={paginaAnterior} variant='brand'></lightning-button>
+                </div> 
+                <div class="slds-m-around_small">   
+                    <lightning-button label="Página Siguiente" onclick={paginaSiguiente} variant='brand'></lightning-button>
+                </div>
+                <div class="slds-m-around_small">   
+                    <lightning-button label="Última Página" onclick={ultimaPagina} variant='brand'></lightning-button>
+                </div >
+                <div class="slds-m-top_medium">    
+                    <p style="font-size: 20px">Cantidad de registros mostrados : {cantDeRegistros}</p>
+                </div>
+                    <c-salesforce-codex-data-table
+                        class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered"
+                        key-field="ID"
+                        data={datosDePagina}
+                        columns={columns}
+                        hide-checkbox-column="true"
+                        onrowaction={handleRowAction}
+                        selected-rows={selectedRows}
+                        >
+                    </c-salesforce-codex-data-table>
+            </lightning-layout>
+            </template>
+        </div>
+    </lightning-card>
+</template>

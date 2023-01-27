@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Filtro por Tipos">
+        <div class="slds-var-m-around_x-small" >
+            <lightning-dual-listbox name="Tipos"
+                                    label="Seleccionar Tipos para Filtro"
+                                    source-label="Disponible"
+                                    selected-label="Seleccionados"
+                                    field-level-help="Selecciona los tipos para aplicar al filtro"
+                                    options={options}
+                                    max={max}
+                                    ></lightning-dual-listbox>
+        </div>
+    </lightning-card>
+</template>
